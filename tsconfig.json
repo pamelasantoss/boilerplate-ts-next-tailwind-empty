@@ -13,6 +13,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "plugins": [
+      {
+        "name": "@formatjs/ts-transformer",
+        "compilerOptions": {
+          "idInterpolationPattern": "[sha512:contenthash:base64:6]"
+        }
+      }
+    ],
     "paths": {
       "@/*": ["./src/*"]
     }

@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { FormattedMessage } from "react-intl"
 import { Header } from "@/components"
 
 export default function Home() {
@@ -11,7 +12,9 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <div>Hello world!</div>
+        <div>
+          <FormattedMessage defaultMessage="Texto na página!" />
+        </div>
       </main>
     </>
   )
