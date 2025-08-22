@@ -7,10 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix && git add -A .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "format:check": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore . && git add .",
+    "format": "prettier --write .",
+    "format:staged": "git diff --name-only --staged | grep '\\.js\\|\\.jsx\\|\\.ts\\|\\.tsx' | xargs npx prettier --write && git add -A .",
     "prepare": "husky"
   },
   "dependencies": {
