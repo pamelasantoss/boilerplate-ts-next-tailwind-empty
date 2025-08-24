@@ -6,13 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix && git add -A .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix && git add -A .",
     "test": "jest",
     "test:watch": "jest --watch",
     "format": "npx prettier --write .",
-    "format:staged": "git diff --name-only --staged | grep '\\.js\\|\\.jsx\\|\\.ts\\|\\.tsx' | xargs npx prettier --write && git add -A .",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "next": "^15.5.0",
@@ -30,7 +35,7 @@
     "@types/react-dom": "^19.1.7",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@typescript-eslint/parser": "^8.24.0",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "eslint-config-next": "^15.5.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import-helpers": "^2.0.1",
@@ -39,6 +44,7 @@
     "husky": "^9.1.7",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
+    "lint-staged": "^16.1.5",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
